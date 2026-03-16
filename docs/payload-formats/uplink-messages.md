@@ -49,7 +49,7 @@ Response messages are sent by the device in reply to certain downlink commands.
 
 You can decode uplink messages from Abeeway devices with our JavaScript driver, published on npm as [abeeway-asset-tracker-driver-v3](https://www.npmjs.com/package/abeeway-asset-tracker-driver-v3).
 
-If you prefer to download the driver manually, you can find it in the [abeeway-driver](https://github.com/norbertherbert/abeeway-driver) GitHub repository.
+If you prefer to download the driver manually, you can find it in the [abeeway-codec](https://github.com/Abeeway/abeeway-codec) GitHub repository.
 
 ## Further Reading
 

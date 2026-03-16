@@ -4,10 +4,54 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+// import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+
+const appLinks = [
+  // {
+  //   title: 'BeeGuide',
+  //   href: 'https://norbertherbert.github.io/beeguide',
+  //   description: 'Quick reference guide',
+  // },
+  {
+    title: 'BeeHive',
+    href: 'https://norbertherbert.github.io/beehive',
+    description: 'Bluetooth/USB management and debug tool',
+    icon: '/img/beehive-icon-small.png',
+  },
+  {
+    title: 'BeeQueen',
+    href: 'https://norbertherbert.github.io/beequeen',
+    description: 'Configuration editor',
+    icon: '/img/beequeen-icon-small.png',
+  },
+  {
+    title: 'AbwBattery',
+    href: 'https://norbertherbert.github.io/abeeway-battery',
+    description: 'Battery lifetime estimation tool for Abeeway Trackers',
+    icon: '/img/abeeway-battery-icon.svg',
+  },
+  {
+    title: 'RelayBattery',
+    href: 'https://norbertherbert.github.io/abeeway-relay-battery',
+    description: 'Battery lifetime estimation tool for Abeeway Relay',
+    icon: '/img/relay-battery-icon.svg',
+  },
+  {
+    title: 'BeeMap',
+    href: 'https://norbertherbert.github.io/beemap',
+    description: 'Demo map tool for tracking',
+    icon: '/img/beemap-icon.svg',
+  },
+  {
+    title: 'TiltMonitor',
+    href: 'https://norbertherbert.github.io/tilt-monitoring',
+    description: 'Demo tool for tilt monitoring',
+    icon: '/img/tilt-monitor-icon.svg',
+  },
+];
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -34,6 +78,41 @@ function HomepageHeader() {
   );
 }
 
+function AppLinks(): ReactNode {
+  return (
+    <section className={styles.appSection}>
+      <div className="container">
+        <div className={styles.appSectionHeader}>
+          <Heading as="h2">Abeeway Tools</Heading>
+          {/* <p>Open the main Abeeway web applications directly from this portal.</p> */}
+        </div>
+        <div className={styles.appGrid}>
+          {appLinks.map((app) => (
+            <a
+              key={app.title}
+              href={app.href}
+              className={styles.appCard}
+              target="_blank"
+              rel="noopener noreferrer">
+              <Heading as="h3" className={styles.appCardTitle}>
+                {app.icon ? (
+                  <img
+                    src={useBaseUrl(app.icon)}
+                    alt={`${app.title} icon`}
+                    className={styles.appCardIcon}
+                  />
+                ) : null}
+                {app.title}
+              </Heading>
+              <p>{app.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -42,7 +121,8 @@ export default function Home(): ReactNode {
       description="Practical documentation for Abeeway tracker devices and integrations.">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        {/* <HomepageFeatures /> */}
+        <AppLinks />
       </main>
     </Layout>
   );

@@ -1,41 +1,62 @@
-# Website
+# BeeGuide
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+BeeGuide is a Docusaurus-based documentation portal for Abeeway tracker devices, payload formats, configuration, and integration topics.
+
+## Requirements
+
+- Node.js 20 or newer
+- npm
 
 ## Installation
 
+Install dependencies with:
+
 ```bash
-yarn
+npm install
 ```
 
 ## Local Development
 
+Start the local development server with:
+
 ```bash
-yarn start
+npm run start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+The site will be available at [http://localhost:3000](http://localhost:3000). Most changes are reloaded automatically.
 
 ## Build
 
-```bash
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+Create a production build with:
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
 ```
 
-Not using SSH:
+The generated site is written to the `build` directory.
+
+To preview the production build locally:
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+npm run serve
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Publish to GitHub Pages
+
+This repository includes a GitHub Actions workflow for publishing the site to GitHub Pages:
+
+- `.github/workflows/deploy.yml`
+
+The workflow runs automatically on every push to the `main` branch.
+
+To enable publishing:
+
+1. Push the repository to GitHub.
+2. Open the repository settings on GitHub.
+3. Go to `Settings` -> `Pages`.
+4. Under `Build and deployment`, set the source to `GitHub Actions`.
+5. Push changes to `main`.
+
+After the workflow completes successfully, the site will be published to:
+
+- [https://norbertherbert.github.io/beeguide/](https://norbertherbert.github.io/beeguide/)
