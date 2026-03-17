@@ -53,6 +53,21 @@ const appLinks = [
   },
 ];
 
+const legacyAppLinks = [
+  {
+    title: 'BeeHiveAT2',
+    href: 'https://norbertherbert.github.io/beehive-at2',
+    description: 'Bluetooth/USB management and debug tool for AT2 Firmware',
+    icon: '/img/beehive-icon-small.png',
+  },
+  {
+    title: 'BeeQueenAT2',
+    href: 'https://norbertherbert.github.io/beequeen-at2',
+    description: 'Configuration editor for AT2 Firmware',
+    icon: '/img/beequeen-icon-small.png',
+  },
+];
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const iconUrl = useBaseUrl('/img/beeguide-icon-book.svg');
@@ -83,11 +98,35 @@ function AppLinks(): ReactNode {
     <section className={styles.appSection}>
       <div className="container">
         <div className={styles.appSectionHeader}>
-          <Heading as="h2">Abeeway Tools</Heading>
-          {/* <p>Open the main Abeeway web applications directly from this portal.</p> */}
+          <Heading as="h2">Abeeway Tools for AT3 Firmware</Heading>
         </div>
         <div className={styles.appGrid}>
           {appLinks.map((app) => (
+            <a
+              key={app.title}
+              href={app.href}
+              className={styles.appCard}
+              target="_blank"
+              rel="noopener noreferrer">
+              <Heading as="h3" className={styles.appCardTitle}>
+                {app.icon ? (
+                  <img
+                    src={useBaseUrl(app.icon)}
+                    alt={`${app.title} icon`}
+                    className={styles.appCardIcon}
+                  />
+                ) : null}
+                {app.title}
+              </Heading>
+              <p>{app.description}</p>
+            </a>
+          ))}
+        </div>
+        <div className={styles.legacySectionHeader}>
+          <Heading as="h2">Legacy Tools for AT2 Firmware</Heading>
+        </div>
+        <div className={styles.appGrid}>
+          {legacyAppLinks.map((app) => (
             <a
               key={app.title}
               href={app.href}
