@@ -79,8 +79,8 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://tools.abeeway.io/',
-          label: 'BeeTools',
+          href: 'https://github.com/Abeeway',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -114,8 +114,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'BeeTools',
-              href: 'https://tools.abeeway.io/',
+              label: 'GitHub',
+              href: 'https://github.com/Abeeway',
             },
           ],
         },
