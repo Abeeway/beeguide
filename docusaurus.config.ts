@@ -92,12 +92,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Overview',
-              to: '/docs/intro',
+              label: 'Quick Start',
+              to: '/docs/quick-start/intro',
             },
             {
-              label: 'Trackers',
-              to: '/docs/category/trackers',
+              label: 'Abeeway Devices',
+              to: '/docs/category/abeeway-devices',
             },
           ],
         },
