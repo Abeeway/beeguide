@@ -39,5 +39,6 @@ Request messages are sent to read information from the device or to update its c
 ## Further Reading
 
 - [Downlink payload format description](https://docs.thingpark.com/thingpark-location/firmware/application-downlink)
-- [Payload examples](https://github.com/actility/device-catalog/blob/main/vendors/abeeway/drivers/asset-tracker-3/examples.json)
-- [JavaScript encoder/decoder](https://www.npmjs.com/package/abeeway-asset-tracker-driver-v3)
+- [Payload examples](https://github.com/Abeeway/abeeway-codec/blob/main/AT3/examples.json)
+- [JavaScript encoder/decoder - GitHub](https://github.com/Abeeway/abeeway-codec)
+- [JavaScript encoder/decoder - NPM](https://www.npmjs.com/package/abeeway-asset-tracker-driver-v3)

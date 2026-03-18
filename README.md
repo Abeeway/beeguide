@@ -1,6 +1,6 @@
 # BeeGuide
 
-BeeGuide is a Docusaurus-based documentation portal for Abeeway tracker devices, payload formats, configuration, and integration topics.
+BeeGuide is a Docusaurus-based documentation portal for Abeeway tracker devices.
 
 ## Requirements
 

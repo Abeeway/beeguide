@@ -1,39 +1,36 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
-    'intro',
     {
-      type: 'category',
-      label: 'Trackers',
-      link: {
-        type: 'generated-index',
-        title: 'Trackers',
-        description: 'Abeeway tracker model documentation.',
-      },
-      items: ['trackers/combo-compact'],
+      type: 'doc',
+      id: 'quick-start/intro',
+      label: 'Quick Start',
     },
     {
       type: 'category',
-      label: 'Payload Formats',
+      label: 'Abeeway Devices',
       link: {
         type: 'generated-index',
-        title: 'Payload Formats',
+        title: 'Abeeway Devices',
+        description: 'Product briefs',
+      },
+      items: [
+        'devices/combo-compact'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Payload Format',
+      link: {
+        type: 'generated-index',
+        title: 'Payload Format',
         description: 'Payload reference for uplink and downlink messages.',
       },
-      items: ['payload-formats/uplink-messages', 'payload-formats/downlink-messages'],
+      items: [
+        'payload-format/uplink-messages', 
+        'payload-format/downlink-messages'
+      ],
     },
     {
       type: 'category',
@@ -58,19 +55,10 @@ const sidebars: SidebarsConfig = {
         description: 'Network server integration guides and best practices.',
       },
       items: [
+        // 'integration/intro',
         'integration/intro',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Quick Demo',
-      link: {
-        type: 'generated-index',
-        title: 'Quick Demo',
-        description: 'Guide to set up quick demos.',
-      },
-      items: [
-        'quick-demo/intro',
+        'integration/lorawan',
+        'integration/cellular',
       ],
     },
   ],

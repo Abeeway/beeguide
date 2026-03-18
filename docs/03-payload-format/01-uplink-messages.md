@@ -51,8 +51,12 @@ You can decode uplink messages from Abeeway devices with our JavaScript driver, 
 
 If you prefer to download the driver manually, you can find it in the [abeeway-codec](https://github.com/Abeeway/abeeway-codec) GitHub repository.
 
+If you’d like to use our JavaScript driver in a Python environment, please refer to the following GitHub repository, which explains how to embed the driver within Python code:
+[abeeway-driver-python](https://github.com/norbertherbert/abeeway-driver-python)
+
 ## Further Reading
 
 - [Uplink payload format description](https://docs.thingpark.com/thingpark-location/firmware/application-uplink)
-- [Payload examples](https://github.com/actility/device-catalog/blob/main/vendors/abeeway/drivers/asset-tracker-3/examples.json)
-- [JavaScript encoder/decoder](https://www.npmjs.com/package/abeeway-asset-tracker-driver-v3)
+- [Payload examples](https://github.com/Abeeway/abeeway-codec/blob/main/AT3/examples.json)
+- [JavaScript encoder/decoder - GitHub](https://github.com/Abeeway/abeeway-codec)
+- [JavaScript encoder/decoder - NPM](https://www.npmjs.com/package/abeeway-asset-tracker-driver-v3)

@@ -32,4 +32,4 @@ Both applications are designed for Chrome. They rely on Chrome's Web Bluetooth a
 More details on how to set configuration parameters can be found under the following links:
 
 - [Configuration parameters](https://docs.thingpark.com/thingpark-location/firmware/configuration)
-- [Message format for setting a config parameters via downlink](https://docs.thingpark.com/thingpark-location/firmware/application-downlink#parameter-class-configuration-set-request)
+- [Message format for setting config parameters via downlink](https://docs.thingpark.com/thingpark-location/firmware/application-downlink#parameter-class-configuration-set-request)
