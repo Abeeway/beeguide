@@ -20,6 +20,11 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'doc',
+      id: 'activation/intro',
+      label: 'Device Activation',
+    },
+    {
       type: 'category',
       label: 'Payload Format',
       link: {
@@ -28,27 +33,13 @@ const sidebars: SidebarsConfig = {
         description: 'Payload reference for uplink and downlink messages.',
       },
       items: [
-        'payload-format/uplink-messages', 
-        'payload-format/downlink-messages'
+        'payload/uplink-messages', 
+        'payload/downlink-messages'
       ],
     },
     {
       type: 'category',
-      label: 'Configuration',
-      link: {
-        type: 'generated-index',
-        title: 'Configuration',
-        description: 'Tracker behavior and feature configuration guides.',
-      },
-      items: [
-        'configuration/intro',
-        'configuration/beehive',
-        'configuration/beequeen',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Integration',
+      label: 'Application Integration',
       link: {
         type: 'generated-index',
         title: 'Integration',
@@ -59,6 +50,20 @@ const sidebars: SidebarsConfig = {
         'integration/intro',
         'integration/lorawan',
         'integration/cellular',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Device Configuration',
+      link: {
+        type: 'generated-index',
+        title: 'Configuration',
+        description: 'Tracker behavior and feature configuration guides.',
+      },
+      items: [
+        'configuration/intro',
+        'configuration/beehive',
+        'configuration/beequeen',
       ],
     },
   ],

@@ -46,10 +46,10 @@ const appLinks = [
     icon: '/img/beemap-icon.svg',
   },
   {
-    title: 'TiltMonitor',
-    href: 'https://norbertherbert.github.io/tilt-monitoring',
-    description: 'Demo tool for tilt monitoring',
-    icon: '/img/tilt-monitor-icon.svg',
+    title: 'PayloadDecoder',
+    href: 'https://abeeway.github.io/abeeway-codec/examples/codec-as-browser-module.html',
+    description: 'Demo tool for decoding hex-encoded payload',
+    icon: '/img/beemap-icon.svg',
   },
 ];
 
@@ -65,6 +65,12 @@ const legacyAppLinks = [
     href: 'https://norbertherbert.github.io/beequeen-at2',
     description: 'Configuration editor for AT2 Firmware',
     icon: '/img/beequeen-icon-small.png',
+  },
+  {
+    title: 'TiltMonitor',
+    href: 'https://norbertherbert.github.io/tilt-monitoring',
+    description: 'Demo tool for tilt monitoring',
+    icon: '/img/tilt-monitor-icon.svg',
   },
 ];
 

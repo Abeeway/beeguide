@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 # Quick Start
@@ -11,10 +11,13 @@ It provides a practical overview of the main topics you need to understand when 
 The typical onboarding steps are:
 
 1. Learn the main features of your device.  
-   See the **Trackers** section.
-2. Understand what information the device can send.  
+   See the **Abeeway Devices** section.
+2. Turn on your device, and connet it to a network  
+   See the **Device Activation** section.  
+3. Understand what information the device sends  
    See the **Payload Format** section.
-3. Configure the device for your use case.  
-   See the **Configuration** section.
 4. Connect the device to your application server.  
-   See the **Integration** section.
+   See the **Application Integration** section.
+5. Configure the device for your use case.  
+   See the **Device Configuration** section.
+
