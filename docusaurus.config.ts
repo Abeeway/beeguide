@@ -35,12 +35,52 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'docs-quickstart',
+    //     path: 'docs-quickstart',
+    //     routeBasePath: 'docs-quickstart',
+    //     sidebarPath: require.resolve('./sidebars.js'),
+    //   },
+    // ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'at3',
+        path: 'at3',
+        routeBasePath: 'at3',
+        sidebarPath: require.resolve('./sidebars-at3.js'),
+        showLastUpdateTime: true,
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: 'Firmware AT3 v1.4'
+          },
+          "AT3_v1.3": {
+            label: 'Firmware AT3 v1.3',
+            banner: 'none'
+          },
+          "AT3_v1.2": {
+            label: 'Firmware AT3 v1.2',
+            banner: 'none'
+          },
+          "AT3_v1.1": {
+            label: 'Firmware AT3 v1.1',
+            banner: 'none'
+          },
+        },
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: './sidebars-quickstart.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -69,9 +109,22 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'quickstartSidebar',
           position: 'left',
-          label: 'Documentation',
+          label: 'Quick start',
+        },
+        // {
+        //   type: 'docSidebar',
+        //   docsPluginId: 'at3',
+        //   sidebarId: 'at3Sidebar',
+        //   position: 'left',
+        //   label: 'AT3 Firmware'
+        // },
+        {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'at3',
+          position: 'left',
+          sidebarId: 'at3Sidebar',
         },
         {
           href: 'https://abeeway.com/',
@@ -93,7 +146,7 @@ const config: Config = {
           items: [
             {
               label: 'Quick Start',
-              to: '/docs/quick-start/intro',
+              to: '/docs/intro',
             },
             {
               label: 'Abeeway Devices',
