@@ -3,6 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+const siteBaseUrl = '/beeguide/';
 
 const config: Config = {
   title: 'BeeGuide',
@@ -18,7 +19,7 @@ const config: Config = {
   url: 'https://norbertherbert.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/beeguide/',
+  baseUrl: siteBaseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -35,52 +36,18 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: [
-    // [
-    //   '@docusaurus/plugin-content-docs',
-    //   {
-    //     id: 'docs-quickstart',
-    //     path: 'docs-quickstart',
-    //     routeBasePath: 'docs-quickstart',
-    //     sidebarPath: require.resolve('./sidebars.js'),
-    //   },
-    // ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'at3',
-        path: 'at3',
-        routeBasePath: 'at3',
-        sidebarPath: require.resolve('./sidebars-at3.js'),
-        showLastUpdateTime: true,
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: 'Firmware AT3 v1.4'
-          },
-          "AT3_v1.3": {
-            label: 'Firmware AT3 v1.3',
-            banner: 'none'
-          },
-          "AT3_v1.2": {
-            label: 'Firmware AT3 v1.2',
-            banner: 'none'
-          },
-          "AT3_v1.1": {
-            label: 'Firmware AT3 v1.1',
-            banner: 'none'
-          },
-        },
-      },
-    ],
-  ],
+  plugins: [],
 
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars-quickstart.ts',
+          sidebarPath: './sidebars.ts',
+          showLastUpdateTime: true,
+          remarkPlugins: [
+            [require('./plugins/remark-firmware-latest-links'), {baseUrl: siteBaseUrl}],
+          ],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -108,25 +75,6 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'quickstartSidebar',
-          position: 'left',
-          label: 'Quick start',
-        },
-        // {
-        //   type: 'docSidebar',
-        //   docsPluginId: 'at3',
-        //   sidebarId: 'at3Sidebar',
-        //   position: 'left',
-        //   label: 'AT3 Firmware'
-        // },
-        {
-          type: 'docsVersionDropdown',
-          docsPluginId: 'at3',
-          position: 'left',
-          sidebarId: 'at3Sidebar',
-        },
-        {
           href: 'https://abeeway.com/',
           label: 'Abeeway',
           position: 'right',
@@ -146,11 +94,11 @@ const config: Config = {
           items: [
             {
               label: 'Quick Start',
-              to: '/docs/intro',
+              to: '/docs/category/quick-start',
             },
             {
-              label: 'Abeeway Devices',
-              to: '/docs/category/abeeway-devices',
+              label: 'Firmware Reference Guide',
+              to: '/docs/category/firmware-reference-guide',
             },
           ],
         },

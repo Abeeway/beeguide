@@ -1,0 +1,8 @@
+{
+  "label": "Firmware Reference Guide",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "AT3 firmware reference documentation grouped by release."
+  }
+}
