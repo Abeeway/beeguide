@@ -1,4 +1,4 @@
-const firmwareLatest = require('../../docs/02-firmware-reference-guide/_firmware-latest_.json');
+const firmwareLatest = require('../../docs/06-firmware-reference-guide/_firmware-latest_.json');
 
 const latestBase = '/docs/firmware-reference-guide/latest';
 const versionedBase = `/docs/firmware-reference-guide/${firmwareLatest.version}`;

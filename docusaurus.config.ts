@@ -94,11 +94,11 @@ const config: Config = {
           items: [
             {
               label: 'Quick Start',
-              to: '/docs/category/quick-start',
+              to: '/docs/quick-start/intro',
             },
             {
               label: 'Firmware Reference Guide',
-              to: '/docs/category/firmware-reference-guide',
+              to: '/docs/firmware-reference-guide/at3-v1.4/overview',
             },
           ],
         },
