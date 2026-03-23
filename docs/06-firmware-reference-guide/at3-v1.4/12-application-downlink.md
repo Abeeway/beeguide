@@ -32,7 +32,7 @@ the downlink message in LoRaWAN class A).
       <td>b2-0</td>
     </tr>
     <tr>
-      <td>F</td>
+      <td>RFU</td>
       <td>Type</td>
       <td>ACK-TK</td>
     </tr>
@@ -43,10 +43,10 @@ the downlink message in LoRaWAN class A).
 
 - **RFU**. Reserved for future use.
 - **Type**. Frame type.:
-  - 1 -- **Command**. Commands are neither acknowledged nor answered
+  - 1 – **Command**. Commands are neither acknowledged nor answered
     (Reset, BLE bootloader, SOS enter/leave, and so on).
-  - 2 -- **Request**. Requests expect a response uplink.
-  - 3 -- **Answer**. Answer a query from the tracker.
+  - 2 – **Request**. Requests expect a response uplink.
+  - 3 – **Answer**. Answer a query from the tracker.
 - **ACK-TK**: Ack-token. Value (in \[0..7\]) extracted from the last
     downlink received. It is used to acknowledge the downlinks.
 
@@ -74,20 +74,20 @@ The format of a command is the following
 
 - Byte 0. Basic header with type = 1
 - Byte 1. Command:
-  - 0 -- Clear the configuration in flash memory and reset the tracker
-  - 1 -- Reset the tracker (no data)
-  - 2 -- Start SOS (no data)
-  - 3 -- Stop SOS (no data)
-  - 4 -- System status request (no data)
-  - 5 -- Position-On-Demand (POD) (no data)
-  - 6 -- Set GPS almanac
-  - 7 -- Set BEIDOU almanac
-  - 8 -- Start BLE connectivity (no data)
-  - 9 -- Stop BLE connectivity (no data)
-  - 10 -- System event
-  - 11 -- Clear motion percentage (no data)
-  - 12 -- Get buffered uplinks, filtered by date and type
-  - 13 -- Clear the uplink buffer (no data)
+  - 0 – Clear the configuration in flash memory and reset the tracker
+  - 1 – Reset the tracker (no data)
+  - 2 – Start SOS (no data)
+  - 3 – Stop SOS (no data)
+  - 4 – System status request (no data)
+  - 5 – Position-On-Demand (POD) (no data)
+  - 6 – Set GPS almanac
+  - 7 – Set BEIDOU almanac
+  - 8 – Start BLE connectivity (no data)
+  - 9 – Stop BLE connectivity (no data)
+  - 10 – System event
+  - 11 – Clear motion percentage (no data)
+  - 12 – Get buffered uplinks, filtered by date and type
+  - 13 – Clear the uplink buffer (no data)
   - 14 –- Clear BLE bond data (no data)
 
 ### `Clear flash memory configuration` command
@@ -233,15 +233,15 @@ The format of a request is the following
 
 - **Byte 0.** Basic header with type = 2.
 - **Byte 1**. Request types:
-  - 0 -- Generic configuration set request.
-  - 1 -- Parameter class configuration set request.
-  - 2 -- Generic configuration get request.
-  - 3 -- Parameter class configuration get request.
-  - 4 -- BLE connectivity status request.
-  - 5 -- CRC configuration request
-  - 6 -- Get sensor values
-  - 7 -- Get debug information
-  - 8 -- FUOTA request
+  - 0 – Generic configuration set request.
+  - 1 – Parameter class configuration set request.
+  - 2 – Generic configuration get request.
+  - 3 – Parameter class configuration get request.
+  - 4 – BLE connectivity status request.
+  - 5 – CRC configuration request
+  - 6 – Get sensor values
+  - 7 – Get debug information
+  - 8 – FUOTA request
 
 ### `Generic configuration set request`
 
@@ -272,13 +272,13 @@ The command parameters are defined below. Note that the format is the same as th
 - **C-ID**. Parameter class identifier
 - **L-ID:** Local parameter identifier
 - **S/T:** Parameter size and type
-  - Bit 7-3: Variable size
-  - Bit 2-0: type
-    - 0 -- Deprecated
-    - 1 -- Integer 32 bits
-    - 2 -- Floating point (4 bytes)
-    - 3 -- ASCII string
-    - 4 -- Byte array
+  - b7-3: Variable size
+  - b2-0: type
+    - 0 – Deprecated
+    - 1 – Integer 32 bits
+    - 2 – Floating point (4 bytes)
+    - 3 – ASCII string
+    - 4 – Byte array
 - **Data**: Variable data part
   - Deprecated. No data.
   - Integer 32 bits. 4 bytes in big endian (MSB first)
@@ -331,13 +331,13 @@ The data part is a list of parameters as defined below. Note that the format is 
 - **C-ID**. Parameter class identifier. This field appears only once per message.
 - **L-ID:** Local parameter identifier
 - **S/T** Parameter size and type.
-  - Bit 7-3: Parameter size
-  - Bit 2-0: type
-  - 0 -- Deprecated
-  - 1 -- Integer 32 bits
-  - 2 -- Floating point (4 bytes)
-  - 3 -- ASCII string
-  - 4 -- Byte array
+  - b7-3: Parameter size
+  - b2-0: type
+  - 0 – Deprecated
+  - 1 – Integer 32 bits
+  - 2 – Floating point (4 bytes)
+  - 3 – ASCII string
+  - 4 – Byte array
 - **Data**: Variable data part
   - Deprecated. No data
   - Integer 32 bits. 4 bytes in big endian (MSB first)
@@ -494,10 +494,10 @@ The generic format of a response is the following
 
 - **Byte 0.** Basic header with type = 3.
 - **Byte 1**. The Response type matches the Request type:
-  - 0 -- Aiding-position. The aiding position is needed by the tracker.
-  - 1 -- Echo reply. Used only for cellular.
-  - 2 -- Update GPS almanac. GPS almanac entries need to be refreshed. Data contains the list of satellites for which the update is needed.
-  - 3 -- Update BEIDOU almanac. BEIDOU almanac entries need to be refreshed. Data contains the list of satellites for which the update is needed.
+  - 0 – Aiding-position. The aiding position is needed by the tracker.
+  - 1 – Echo reply. Used only for cellular.
+  - 2 – Update GPS almanac. GPS almanac entries need to be refreshed. Data contains the list of satellites for which the update is needed.
+  - 3 – Update BEIDOU almanac. BEIDOU almanac entries need to be refreshed. Data contains the list of satellites for which the update is needed.
 
 ### Aiding position
 
@@ -544,3 +544,4 @@ The request paramters are formatted as follows:
 - **SV-ID**: Satellite identifier in the constellation. Start at 0.
 
 Due to the limited payload size on the LoRaWAN network (EU868, DR0-2, Max: 59 bytes), only 3 entries can be updated per downlink.
+

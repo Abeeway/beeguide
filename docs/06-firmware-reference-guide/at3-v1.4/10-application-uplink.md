@@ -79,19 +79,19 @@ multi-frame modes.
 ***Byte 0 description***
 
 - **M**. Multi-frame (0: single frame; 1: multi-frame).
-  - 0 - Single frame.
-  - 1 -- Multi-frame
+  - 0 – Single frame.
+  - 1 – Multi-frame
 - **S**. SOS.
-  - 0 --SOS mode not active
-  - 1 -- SOS mode active
+  - 0 – SOS mode not active
+  - 1 – SOS mode active
 - **Type**. Frame type.:
-  - 1 -- **Notification**. Unsolicited message (System start,
+  - 1 – **Notification**. Unsolicited message (System start,
       Critical/normal temperature, motion start/stop, SOS start/stop,
       geozoning, battery alert, etc.).
-  - 2 -- **Position**. Unsolicited message. Geolocation positions.
-  - 3 -- **Query**. Expects a response from the network (aiding
+  - 2 – **Position**. Unsolicited message. Geolocation positions.
+  - 3 – **Query**. Expects a response from the network (aiding
       position request, almanac request, etc.).
-  - 4 -- **Response**: Solicited message. Response to network query
+  - 4 – **Response**: Solicited message. Response to network query
       (config get/set, POD, Almanac get/set, etc.).
   - Other values: Reserved for future use.
 - **ACK-TK**: Ack-token. Value (in \[0..7\]) extracted from the last
@@ -106,7 +106,7 @@ multi-frame modes.
   - 0: **in charge**
   - 127: **unknown**
 
-***Bytes 2 -- 3*** contain the timestamp indicating when the payload was generated. The value represents the **number of seconds elapsed since the start of the most recent half-day period** (a value of 0 corresponds to either noon or midnight). Over LoRaWAN networks, when the LoRaWAN stack is in multiple transmit mode, the retransmissions keep the same timestamp.
+***Bytes 2 – 3*** contain the timestamp indicating when the payload was generated. The value represents the **number of seconds elapsed since the start of the most recent half-day period** (a value of 0 corresponds to either noon or midnight). Over LoRaWAN networks, when the LoRaWAN stack is in multiple transmit mode, the retransmissions keep the same timestamp.
 
 ### Special long timestamp header
 
@@ -319,7 +319,7 @@ the last page is sent, the page identifier resets to 0.
       <td colspan="2">Reset cause and page ID</td>
     </tr>
     <tr>
-      <td>b7- 0</td>
+      <td>b7-0</td>
       <td>b7-3</td>
       <td>b2-0</td>
     </tr>
@@ -860,13 +860,13 @@ has been established. Otherwise, these values are set to 0.
       <td colspan="4"><strong>Config CRC</strong></td>
     </tr>
     <tr>
-      <td>b7-b0</td>
-      <td>b7-b3</td>
-      <td>b2-b0</td>
-      <td>b31-b24</td>
+      <td>b7-0</td>
+      <td>b7-3</td>
+      <td>b2-0</td>
+      <td>b31-24</td>
       <td>...</td>
       <td>...</td>
-      <td>b7-b0</td>
+      <td>b7-0</td>
     </tr>
     <tr>
       <td></td>
@@ -1125,7 +1125,7 @@ and is the following:
 | **1 byte**     | **1 byte**   | **1 byte**     |
 | -------------- | ------------ | -------------- |
 | Active network | Main network | backup network |
-| b7-0           | b7-0         | b7-0           |
+| b7-0          | b7-0        | b7-0          |
 | [0..2]         | [0..2]       | [0..2]         |
 
 Each byte encodes a network technology:
@@ -1178,7 +1178,7 @@ The position header is defined as follows:
       <td>b4-0</td>
       <td>b7-4</td>
       <td>b3-0</td>
-      <td>b15-b0</td>
+      <td>b15-0</td>
     </tr>
     <tr>
       <td>M</td>
@@ -1198,26 +1198,26 @@ The position header is defined as follows:
 - b7: **M**. Motion bit. Set if a motion event has been detected since
   the transmission of the previous position payload.
 - b6-5: **Status**. Status of the position
-  - 0 -- Success. Data contains the position.
-  - 1 -- Timeout. Max time allowed to acquire the position. Optional
+  - 0 – Success. Data contains the position.
+  - 1 – Timeout. Max time allowed to acquire the position. Optional
       data.
-  - 2 -- Failure. Position acquisition failed for other reasons.
+  - 2 – Failure. Position acquisition failed for other reasons.
       Data contains failure reason or no data.
-  - 3 -- Not-solvable: The acquisition has been completed but is not
+  - 3 – Not-solvable: The acquisition has been completed but is not
       solvable (WIFI, BLE or AGNSS). Optional data.
 - b4-0: **Position type**
-  - 0 -- LR1110 GNSS formatted Nav1
-  - 1 -- LR1110 GNSS Semtech Nav1
-  - 2 -- LR1110 GNSS Semtech Nav 2
-  - 3 -- WIFI
+  - 0 – LR1110 GNSS formatted Nav1
+  - 1 – LR1110 GNSS Semtech Nav1
+  - 2 – LR1110 GNSS Semtech Nav 2
+  - 3 – WIFI
   - 4 - BLE scan1 (report mode: MAC-address)
-  - 5 -- BLE scan1 (report mode: Short IDs)
-  - 6 -- BLE scan1 (report mode Long IDs)
+  - 5 – BLE scan1 (report mode: Short IDs)
+  - 6 – BLE scan1 (report mode Long IDs)
   - 7 - BLE scan2 (report mode: MAC-address)
-  - 8 -- BLE scan2 (report mode: Short IDs)
-  - 9 -- BLE scan2 (report mode Long IDs)
+  - 8 – BLE scan2 (report mode: Short IDs)
+  - 9 – BLE scan2 (report mode Long IDs)
   - 10 - MT3333 GNSS fix
-  - 11 -- MT3333 LP-GNSS
+  - 11 – MT3333 LP-GNSS
 
 **Extended info**
 - b7-4: RFU (Reserved For Future Use)
@@ -1286,7 +1286,7 @@ This position message can carry up to 10 satellite information fields. The multi
 </table>
 
 **Time** : LR1110 SW Time (TOW) in microseconds, MSB first (big endian).
-| b31-20              | b19- 0      |
+| b31-20              | b19-0      |
 |---------------------|-------------|
 | second in the hour | microseconds |
 
@@ -1294,15 +1294,15 @@ This position message can carry up to 10 satellite information fields. The multi
 Uses the same encoding as for the MT3333 GNSS
 
 - b31-30: **C**. Constellation:
-  - 0 -- GPS
-  - 1 -- BEIDOU
-  - 2, 3 - Spare
+  - 0 – GPS
+  - 1 – BEIDOU
+  - 2, 3 – Spare
 - b29-24: **ID**. Satellite identifier starting at 0 regardless of the constellation type.
 - b23-22: **CN**. Carrier to noise information
-  - 3 -- C/N greater than 34 dB
-  - 2 -- C/N in range \[28-33\] dB
-  - 1 - C/N in range \[22-27\] dB
-  - 0 - C/N less than 21 dB
+  - 3 – C/N greater than 34 dB
+  - 2 – C/N in range \[28-33\] dB
+  - 1 – C/N in range \[22-27\] dB
+  - 0 – C/N less than 21 dB
 - b21-0: **PRN**. Pseudo range value. Coded for a full scale of 1ms shifted by 2 to the right.
 
 ### LR1110 GNSS Semtech Nav2
@@ -1563,15 +1563,15 @@ if the fix failed.
 | 255             | EHPE > 4000        |
 
 - Quality: Fix quality coded as follow:
-    - Bits b7-5: Quality:
-        - 0 -- invalid: The GNSS gave a fix but consider it as invalid
-        - 1 -- valid: The GNSS gave a fix but has no idea if it is a
+    - b7-5: Quality:
+        - 0 – invalid: The GNSS gave a fix but consider it as invalid
+        - 1 – valid: The GNSS gave a fix but has no idea if it is a
             2D or 3D
-        - 2 -- fix 2D: Fix valid for 2 dimension (latitude and
+        - 2 – fix 2D: Fix valid for 2 dimension (latitude and
             longitude valid).
-        - 3 -- fix 3D Fix valid for 3 dimension (latitude, longitude
+        - 3 – fix 3D Fix valid for 3 dimension (latitude, longitude
             and altitude valid).
-    - Bits b4-0: Number of satellites used for the fix. Max 12
+    - b4-0: Number of satellites used for the fix. Max 12
 
 ***Payload format in case of failure or timeout***
 
@@ -1603,18 +1603,18 @@ if the fix failed.
 **Notes**
 
 - The Status field is coded as follow:
-  - b7 -- b5: Cause
-    - 0: T0 timeout
-    - 1: T1 timeout
-    - 2: acquisition timeout
-  - b4 -- b0: Number of satellites seen.
+  - b7-5: Cause
+    - 0 – T0 timeout
+    - 1 – T1 timeout
+    - 2 – acquisition timeout
+  - b4-0: Number of satellites seen.
 
   The info field is coded on 1 byte and is formatted as follow:
-  - b7-b6: Constellation
-    - 0: GPS
-    - 1: GLONASS
-    - 2: BEIDOU
-    - 3: GALILEO
+  - b7-6: Constellation
+    - 0 – GPS
+    - 1 – GLONASS
+    - 2 – BEIDOU
+    - 3 – GALILEO
   - b5-0: C/N0 in dBm
 
 ###  MT3333 LP-GNSS
@@ -1665,16 +1665,16 @@ single scan.
 used).**
 
 - b31-30: **C**. Constellation:
-  - 0 -- GPS
-  - 1 -- BEIDOU
-  - 2, 3 - Spare
+  - 0 – GPS
+  - 1 – BEIDOU
+  - 2, 3 – Spare
 - b29-24: **ID**. Satellite identifier starting at 0 regardless the
   constellation type.
 - b23-22: **CN**. Carrier to noise information
-  - 3 -- C/N greater than 34 dB
-  - 2 -- C/N in range \[28.. 33\] dB
-  - 1 - C/N in range \[22..27\] dB
-  - 0 - C/N less than 21 dB
+  - 3 – C/N greater than 34 dB
+  - 2 – C/N in range \[28.. 33\] dB
+  - 1 – C/N in range \[22..27\] dB
+  - 0 – C/N less than 21 dB
 
 - b21-0: PRN. Pseudo range value. Coded for a full scale of 1ms
   shifted by 2 to the right.
@@ -1691,16 +1691,16 @@ The device queries are formatted as follows.
 
 ***Query header***
 
-- b7-b5: Spare bits
+- b7-5: Spare bits
 - b4-0: **Query type**:
-  - 0 -- Aiding-position. The aiding position is needed by the
+  - 0 – Aiding-position. The aiding position is needed by the
     tracker. **No data**.
-  - 1 -- Update system time. The system time update is needed. **No
+  - 1 – Update system time. The system time update is needed. **No
     data**
-  - 2 -- Update GPS almanac. GPS almanac entries need to be
+  - 2 – Update GPS almanac. GPS almanac entries need to be
     refreshed. Data contains the list of satellites for which the
     update is needed.
-  - 3 -- Update BEIDOU almanac. BEIDOU almanac entries need to be
+  - 3 – Update BEIDOU almanac. BEIDOU almanac entries need to be
     refreshed. Data contains the list of satellites for which the
     update is needed.
 
@@ -1762,17 +1762,17 @@ These messages carry the responses to [network requests](./12-application-downli
 
 ***Response header***
 
-- b7-b5: Spare bits
+- b7-5: Spare bits
 - b4-0: **Response type**
-  - 0 -- Response to a [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request).
-  - 1 -- Response to a [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request).
-  - 2 -- Response to a [`Generic configuration get request`](./12-application-downlink.md#generic-configuration-get-request).
-  - 3 -- Response to a [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request).
-  - 4 -- Response to a [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request).
-  - 5 -- Response to a [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request).
-  - 6 -- Response to a [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request).
-  - 7 -- Response to a [`Get information request`](./12-application-downlink.md#get-information-request).
-  - 8 -- Response to a [`FUOTA request`](./12-application-downlink.md#fuota-request).
+  - 0 – Response to a [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request).
+  - 1 – Response to a [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request).
+  - 2 – Response to a [`Generic configuration get request`](./12-application-downlink.md#generic-configuration-get-request).
+  - 3 – Response to a [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request).
+  - 4 – Response to a [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request).
+  - 5 – Response to a [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request).
+  - 6 – Response to a [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request).
+  - 7 – Response to a [`Get information request`](./12-application-downlink.md#get-information-request).
+  - 8 – Response to a [`FUOTA request`](./12-application-downlink.md#fuota-request).
 
 ### `Generic configuration set response`.
 
@@ -1805,16 +1805,16 @@ The data part can acknowledge the modification of up to 16 parameters.
 - **C-ID**. Parameter class identifier
 - **L-ID:** Local parameter identifier
 - **Status**. Local status for the parameter.
-  - 0 -- Success
-  - 1 -- Not found
-  - 2 -- Below lower bound. For string and byte-array, length below the
+  - 0 – Success
+  - 1 – Not found
+  - 2 – Below lower bound. For string and byte-array, length below the
   minimum
-  - 3 -- Above higher bound. For string and byte-array, length above the
+  - 3 – Above higher bound. For string and byte-array, length above the
   maximum
-  - 4 -- Bad value. Value in acceptable range but not is not supported.
-  - 5 - Type mismatch
-  - 6 -- Operation error (operation failure)
-  - 7 -- Read-only variable.
+  - 4 – Bad value. Value in acceptable range but not is not supported.
+  - 5 – Type mismatch
+  - 6 – Operation error (operation failure)
+  - 7 – Read-only variable.
 
 
 ### `Parameter class configuration set response`
@@ -1845,14 +1845,14 @@ The data part acknowledge the modification of up to 24 parameters.
 - **C-ID**. Parameter class identifier
 - **L-ID**: Local parameter identifier
 - **Status**. Local status for the parameter.
-  - 0 -- Success
-  - 1 -- Not found
-  - 2 -- Below lower bound. For string and byte-array, length below the minimum
-  - 3 -- Above higher bound. For string and byte-array, length above the maximum
-  - 4 -- Bad value. Value in acceptable range but not is not supported.
-  - 5 -- Type mismatch
-  - 6 -- Operation error (operation failure)
-  - 7 -- Read-only variable. 
+  - 0 – Success
+  - 1 – Not found
+  - 2 – Below lower bound. For string and byte-array, length below the minimum
+  - 3 – Above higher bound. For string and byte-array, length above the maximum
+  - 4 – Bad value. Value in acceptable range but not is not supported.
+  - 5 – Type mismatch
+  - 6 – Operation error (operation failure)
+  - 7 – Read-only variable. 
 
 ### `Generic configuration get response`
 
@@ -1886,14 +1886,14 @@ Parameters description:
 - **C-ID** Parameter class identifier
 - **L-ID:** Local parameter identifier
 - **S/T:** Parameter size and type
-  - Bit 7-3: Variable size
-  - Bit 2-0: type
-    - 0 -- Deprecated.
-    - 1 -- Integer 32 bits
-    - 2 -- Floating point (4 bytes)
-    - 3 -- ASCII string
-    - 4 -- Byte array
-    - 5 - Error
+  - b7-3: Variable size
+  - b2-0: type
+    - 0 – Deprecated.
+    - 1 – Integer 32 bits
+    - 2 – Floating point (4 bytes)
+    - 3 – ASCII string
+    - 4 – Byte array
+    - 5 – Error
 - **Data**: Variable data part
   - Deprecated. No data.
   - Integer 32 bits. 4 bytes in big endian (MSB first)
@@ -1943,14 +1943,14 @@ The data part starts with the parameter class identifier, followed by a list of 
 - **C-ID**. Parameter class identifier
 - **L-ID:** Local parameter identifier
 - **S/T** Parameter size and type.
-  - Bit 7-3: Parameter size
-  - Bit 2-0: type
-    - 0 -- Deprecated
-    - 1 -- Integer 32 bits
-    - 2 -- Floating point (4 bytes)
-    - 3 -- ASCII string
-    - 4 -- Byte array
-    - 5 - Error
+  - b7-3: Parameter size
+  - b2-0: type
+    - 0 – Deprecated
+    - 1 – Integer 32 bits
+    - 2 – Floating point (4 bytes)
+    - 3 – ASCII string
+    - 4 – Byte array
+    - 5 – Error
 - **Data**: Variable data part
   - Deprecated. No data
   - Integer 32 bits. 4 bytes in big endian (MSB first)
@@ -1969,10 +1969,10 @@ The data part consists of the BLE status.
 The *status* can take one of the following values:
 
 **Notes**
-- **0** -- Idle: No connectivity activity.
-- **1** -- Advertising.
-- **2** -- Connected: the devices is connected but not bonded.
-- **3** -- Bonded: the devices is connected and bonded.
+- **0** – Idle: No connectivity activity.
+- **1** – Advertising.
+- **2** – Connected: the devices is connected but not bonded.
+- **3** – Bonded: the devices is connected and bonded.
 
 ### `Configuration CRC response`
 
@@ -2078,3 +2078,4 @@ This is the response to the [`System status command`](./12-application-downlink.
 
 The response data format is identical to the status notification format, see section [System status
 notification](#class-0-type-0-system-status-notification).
+
