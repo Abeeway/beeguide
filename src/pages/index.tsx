@@ -28,6 +28,12 @@ const appLinks = [
     icon: '/img/beequeen-icon-small.png',
   },
   {
+    title: 'FUOTA',
+    href: 'https://tools.abeeway.io/fuota/',
+    description: 'Firmware Update Over The Air for cellular connectivity',
+    icon: '/img/fuota-icon.svg',
+  },
+  {
     title: 'AbwBattery',
     href: 'https://abeeway.github.io/abeeway-battery',
     description: 'Battery lifetime estimation tool for Abeeway Trackers',
@@ -40,15 +46,15 @@ const appLinks = [
     icon: '/img/relay-battery-icon.svg',
   },
   {
-    title: 'BeeMap',
-    href: 'https://abeeway.github.io/beemap',
-    description: 'Demo map tool for tracking',
-    icon: '/img/beemap-icon.svg',
-  },
-  {
     title: 'PayloadDecoder',
     href: 'https://abeeway.github.io/abeeway-codec/examples/codec-as-browser-module.html',
     description: 'Demo tool for decoding hex-encoded payload',
+    icon: '/img/beemap-icon.svg',
+  },
+  {
+    title: 'BeeMap',
+    href: 'https://abeeway.github.io/beemap',
+    description: 'Demo map tool for tracking',
     icon: '/img/beemap-icon.svg',
   },
 ];
