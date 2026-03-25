@@ -243,7 +243,7 @@ The format of a request is the following
   - 7 – Get debug information
   - 8 – FUOTA request
 
-### `Generic configuration set request`
+### `Generic configuration set request` command
 
 This request is used to configure any parameter in the tracker, and multiple classes of parameters can be updated in a single command.
 The command parameters are defined below. Note that the format is the same as the [`Generic configuration get response`](./10-application-uplink.md#generic-configuration-get-response).
@@ -291,7 +291,7 @@ The command parameters are defined below. Note that the format is the same as th
 
 The tracker responds with a [`Generic configuration set response`](./10-application-uplink.md#generic-configuration-get-response).
 
-### `Parameter class configuration set request`
+### `Parameter class configuration set request` command
 
 This request is used to configure a single parameter class in the tracker. Multiple parameters belonging to this class can be modified, using their identifier within the class.
 
@@ -347,7 +347,7 @@ The data part is a list of parameters as defined below. Note that the format is 
 
 The tracker responds with a [`Parameter class configuration set response`](./10-application-uplink.md#parameter-class-configuration-set-response).
 
-### `Generic configuration get request`
+### `Generic configuration get request` command
 
 This request is used to query some configuration parameters from the tracker. This downlink should be used when multiple classes of parameters are affected by the downlink.
 
@@ -387,7 +387,7 @@ The data part is a list of parameter entries as defined below.
 
 The tracker responds with a [`Generic configuration get response`](./10-application-uplink.md#generic-configuration-get-response).
 
-### `Parameter class configuration get request`
+### `Parameter class configuration get request` command
 
 This request is used to query configuration parameters belonging to a single parameter class.
 
@@ -402,14 +402,14 @@ The data part is a list of parameter IDs as defined below.
 
 The tracker responds with a [`Parameter class configuration get response`](./10-application-uplink.md#parameter-class-configuration-get-response).
 
-### `BLE connectivity status request`
+### `BLE connectivity status request` command
 
 This request is used to query the BLE connectivity status, There is no
 data part for this request.
 
 The tracker responds with a [`BLE connectivity status response`](./10-application-uplink.md#ble-connectivity-status-response).
 
-### `Configuration CRC request`
+### `Configuration CRC request` command
 
 This request is used to query the CRC of selected configuration groups, or the global configuration CRC, for configuration auditing. 
 
@@ -424,7 +424,7 @@ Example: groups 1, 3 and 7 are requested. The bitmap will be  2<up>1</up> + 2<up
 
 The tracker responds with a [`Configuration CRC response`](./10-application-uplink.md#configuration-crc-response).
 
-### `Get sensor value request`
+### `Get sensor value request` command
 
 This generic request is used to read sensor measurements. 
 The data part is the list of sensor identifiers to be read.
@@ -439,7 +439,7 @@ The data part is the list of sensor identifiers to be read.
 
 The tracker responds with a [`Get sensor value response`](./10-application-uplink.md#get-sensor-value-response).
 
-### `Get information request`
+### `Get information request` command
 
 This generic request is used by technical support to retrieve diagnostics.
 
@@ -454,7 +454,7 @@ Where:
 
 The tracker responds with a [`Get information response`](./10-application-uplink.md#get-information-response).
 
-### `FUOTA request`
+### `FUOTA request` command
 
 This generic request is used to initiate the FUOTA process.
 
