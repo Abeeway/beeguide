@@ -57,7 +57,7 @@ If you prefer to download the driver manually, you can find it in the following 
 [abeeway-codec](https://github.com/Abeeway/abeeway-codec)
 
 If you’d like to use our JavaScript driver in a Python environment, please refer to the following GitHub repository, which explains how to embed the driver within Python code:
-[abeeway-driver-python](https://github.com/norbertherbert/abeeway-driver-python)
+[abeeway-driver-python](https://github.com/abeeway/abeeway-driver-python)
 
 ## Further Reading
 

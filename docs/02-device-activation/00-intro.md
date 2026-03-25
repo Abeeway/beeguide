@@ -30,7 +30,7 @@ Without proper gateway coverage, the tracker will not be able to send join reque
 
 To use cellular connectivity, you must insert a SIM card associated with an appropriate NB-IoT or LTE-M subscription.
 
-Cellular connectivity parameters such as the Access Point Name (APN), destination IP address or URL, and destination port can be configured using [BeeHive](https://norbertherbert.github.io/beehive) and [BeeQueen](https://norbertherbert.github.io/beequeen), as described in the **Device Configuration** section.
+Cellular connectivity parameters such as the Access Point Name (APN), destination IP address or URL, and destination port can be configured using [BeeHive](https://abeeway.github.io/beehive) and [BeeQueen](https://abeeway.github.io/beequeen), as described in the **Device Configuration** section.
 
 ## Turning the device on
 

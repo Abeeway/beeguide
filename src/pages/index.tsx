@@ -12,36 +12,36 @@ import styles from './index.module.css';
 const appLinks = [
   // {
   //   title: 'BeeGuide',
-  //   href: 'https://norbertherbert.github.io/beeguide',
+  //   href: 'https://abeeway.github.io/beeguide',
   //   description: 'Quick reference guide',
   // },
   {
     title: 'BeeHive',
-    href: 'https://norbertherbert.github.io/beehive',
+    href: 'https://abeeway.github.io/beehive',
     description: 'Bluetooth/USB management and debug tool',
     icon: '/img/beehive-icon-small.png',
   },
   {
     title: 'BeeQueen',
-    href: 'https://norbertherbert.github.io/beequeen',
+    href: 'https://abeeway.github.io/beequeen',
     description: 'Configuration editor',
     icon: '/img/beequeen-icon-small.png',
   },
   {
     title: 'AbwBattery',
-    href: 'https://norbertherbert.github.io/abeeway-battery',
+    href: 'https://abeeway.github.io/abeeway-battery',
     description: 'Battery lifetime estimation tool for Abeeway Trackers',
     icon: '/img/abeeway-battery-icon.svg',
   },
   {
     title: 'RelayBattery',
-    href: 'https://norbertherbert.github.io/abeeway-relay-battery',
+    href: 'https://abeeway.github.io/abeeway-relay-battery',
     description: 'Battery lifetime estimation tool for Abeeway Relay',
     icon: '/img/relay-battery-icon.svg',
   },
   {
     title: 'BeeMap',
-    href: 'https://norbertherbert.github.io/beemap',
+    href: 'https://abeeway.github.io/beemap',
     description: 'Demo map tool for tracking',
     icon: '/img/beemap-icon.svg',
   },
@@ -56,19 +56,19 @@ const appLinks = [
 const legacyAppLinks = [
   {
     title: 'BeeHiveAT2',
-    href: 'https://norbertherbert.github.io/beehive-at2',
+    href: 'https://abeeway.github.io/beehive-at2',
     description: 'Bluetooth/USB management and debug tool for AT2 Firmware',
     icon: '/img/beehive-icon-small.png',
   },
   {
     title: 'BeeQueenAT2',
-    href: 'https://norbertherbert.github.io/beequeen-at2',
+    href: 'https://abeeway.github.io/beequeen-at2',
     description: 'Configuration editor for AT2 Firmware',
     icon: '/img/beequeen-icon-small.png',
   },
   {
     title: 'TiltMonitor',
-    href: 'https://norbertherbert.github.io/tilt-monitoring',
+    href: 'https://abeeway.github.io/tilt-monitoring',
     description: 'Demo tool for tilt monitoring',
     icon: '/img/tilt-monitor-icon.svg',
   },

@@ -22,8 +22,8 @@ Instead of sending a separate command for every parameter change, users can work
 
 The main tools for this are BeeHive and Beequeen:
 
-- [BeeHive](https://norbertherbert.github.io/beehive) can be used to import and export configuration files and to connect to the device CLI over Bluetooth or USB.
-- [BeeQueen](https://norbertherbert.github.io/beequeen) is a web-based configuration file editor.
+- [BeeHive](https://abeeway.github.io/beehive) can be used to import and export configuration files and to connect to the device CLI over Bluetooth or USB.
+- [BeeQueen](https://abeeway.github.io/beequeen) is a web-based configuration file editor.
 
 Both applications are designed for Chrome. They rely on Chrome's Web Bluetooth and File System APIs, which are not yet available in all browsers.
 

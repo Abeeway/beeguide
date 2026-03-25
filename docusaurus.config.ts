@@ -16,14 +16,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://norbertherbert.github.io',
+  url: 'https://abeeway.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: siteBaseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'norbertherbert', // Usually your GitHub org/user name.
+  organizationName: 'abeeway', // Usually your GitHub org/user name.
   projectName: 'beeguide', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -51,7 +51,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
-          //   'https://github.com/norbertherbert/beeguide',
+          //   'https://github.com/abeeway/beeguide',
         },
         blog: false,
         theme: {
