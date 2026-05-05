@@ -1,5 +1,32 @@
 pipeline {
-    agent any
+    agent {
+        kubernetes {
+            yaml '''
+                apiVersion: v1
+                kind: Pod
+                spec:
+                  containers:
+                    - name: kaniko
+                      image: gcr.io/kaniko-project/executor:v1.23.2-debug
+                      command: ["sleep"]
+                      args: ["infinity"]
+                      volumeMounts:
+                        - name: docker-config
+                          mountPath: /kaniko/.docker
+                    - name: kubectl
+                      image: bitnami/kubectl:1.30
+                      command: ["sleep"]
+                      args: ["infinity"]
+                  volumes:
+                    - name: docker-config
+                      secret:
+                        secretName: scaleway-registry-creds
+                        items:
+                          - key: .dockerconfigjson
+                            path: config.json
+            '''
+        }
+    }
 
     environment {
         REGISTRY      = 'rg.fr-par.scw.cloud/namespace-abeeway'
