@@ -5,31 +5,27 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
-                  serviceAccountName: jenkins
                   containers:
                     - name: jnlp
                       image: jenkins/inbound-agent:latest-jdk17
-                    - name: docker
-                      image: docker:27-cli
+                    - name: kaniko
+                      image: gcr.io/kaniko-project/executor:v1.23.2-debug
                       command: ["sleep"]
                       args: ["infinity"]
-                      env:
-                        - name: DOCKER_HOST
-                          value: tcp://localhost:2375
-                    - name: dind
-                      image: docker:27-dind
-                      securityContext:
-                        privileged: true
-                      env:
-                        - name: DOCKER_TLS_CERTDIR
-                          value: ""
-                      args:
-                        - --host=tcp://0.0.0.0:2375
-                        - --host=unix:///var/run/docker.sock
+                      volumeMounts:
+                        - name: docker-config
+                          mountPath: /kaniko/.docker
                     - name: kubectl
                       image: alpine/kubectl:1.35.4
                       command: ["sleep"]
                       args: ["infinity"]
+                  volumes:
+                    - name: docker-config
+                      secret:
+                        secretName: registry-secret
+                        items:
+                          - key: .dockerconfigjson
+                            path: config.json
             '''
         }
     }
@@ -56,45 +52,16 @@ pipeline {
             }
         }
 
-        stage('Diagnose') {
+        stage('Build & push image') {
             steps {
-                container('docker') {
+                container('kaniko') {
                     sh '''
-                        echo "=== Network ports listening ==="
-                        netstat -tln 2>/dev/null || ss -tln 2>/dev/null || echo "no netstat/ss"
-                        echo "=== Trying to reach dind ==="
-                        nc -zv localhost 2375 2>&1 || echo "nc not available"
-                        wget -qO- http://localhost:2375/_ping 2>&1 || echo "wget failed"
-                        echo "=== DOCKER_HOST env ==="
-                        echo "DOCKER_HOST=$DOCKER_HOST"
+                        /kaniko/executor \
+                            --dockerfile=Dockerfile \
+                            --context=`pwd` \
+                            --destination=${FULL_IMAGE} \
+                            --destination=${REGISTRY}/${IMAGE_NAME}:latest
                     '''
-                }
-            }
-        }
-        
-        stage('Build image') {
-            steps {
-                container('docker') {
-                    sh 'docker build -t ${FULL_IMAGE} -t ${REGISTRY}/${IMAGE_NAME}:latest .'
-                }
-            }
-        }
-
-        stage('Push to Scaleway Registry') {
-            steps {
-                container('docker') {
-                    withCredentials([usernamePassword(
-                        credentialsId: 'scaleway-registry',
-                        usernameVariable: 'REG_USER',
-                        passwordVariable: 'REG_PASS'
-                    )]) {
-                        sh '''
-                            echo "$REG_PASS" | docker login rg.fr-par.scw.cloud -u "$REG_USER" --password-stdin
-                            docker push ${FULL_IMAGE}
-                            docker push ${REGISTRY}/${IMAGE_NAME}:latest
-                            docker logout rg.fr-par.scw.cloud
-                        '''
-                    }
                 }
             }
         }
@@ -106,7 +73,7 @@ pipeline {
                         sh '''
                             kubectl --kubeconfig="$KUBECONFIG" -n ${K8S_NAMESPACE} \
                                 set image deployment/${K8S_DEPLOY} \
-                                ${K8S_DEPLOY}=${FULL_IMAGE} --record
+                                ${K8S_DEPLOY}=${FULL_IMAGE}
                             kubectl --kubeconfig="$KUBECONFIG" -n ${K8S_NAMESPACE} \
                                 rollout status deployment/${K8S_DEPLOY} --timeout=5m
                         '''
@@ -121,7 +88,7 @@ pipeline {
             echo "Successfully deployed ${FULL_IMAGE} to ${K8S_NAMESPACE}/${K8S_DEPLOY}"
         }
         failure {
-            echo "Build failed for ${env.BRANCH_NAME ?: 'unknown branch'} @ ${env.GIT_COMMIT}"
+            echo "Build failed for ${env.BRANCH_NAME ?: 'main'} @ ${env.GIT_COMMIT}"
         }
     }
 }
