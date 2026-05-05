@@ -5,25 +5,28 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
+                  serviceAccountName: jenkins
                   containers:
-                    - name: kaniko
-                      image: gcr.io/kaniko-project/executor:v1.23.2-debug
+                    - name: jnlp
+                      image: jenkins/inbound-agent:latest-jdk17
+                    - name: docker
+                      image: docker:27-cli
                       command: ["sleep"]
                       args: ["infinity"]
-                      volumeMounts:
-                        - name: docker-config
-                          mountPath: /kaniko/.docker
+                      env:
+                        - name: DOCKER_HOST
+                          value: tcp://localhost:2375
+                    - name: dind
+                      image: docker:27-dind
+                      securityContext:
+                        privileged: true
+                      env:
+                        - name: DOCKER_TLS_CERTDIR
+                          value: ""
                     - name: kubectl
                       image: bitnami/kubectl:1.30
                       command: ["sleep"]
                       args: ["infinity"]
-                  volumes:
-                    - name: docker-config
-                      secret:
-                        secretName: registry-secret
-                        items:
-                          - key: .dockerconfigjson
-                            path: config.json
             '''
         }
     }
