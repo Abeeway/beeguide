@@ -23,6 +23,9 @@ pipeline {
                       env:
                         - name: DOCKER_TLS_CERTDIR
                           value: ""
+                        args:
+                          - --host=tcp://0.0.0.0:2375
+                          - --host=unix:///var/run/docker.sock
                     - name: kubectl
                       image: alpine/kubectl:1.35.4
                       command: ["sleep"]
