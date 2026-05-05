@@ -44,7 +44,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
           remarkPlugins: [
             [require('./plugins/remark-firmware-latest-links'), {baseUrl: siteBaseUrl}],
           ],
