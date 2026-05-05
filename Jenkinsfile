@@ -24,7 +24,7 @@ pipeline {
                         - name: DOCKER_TLS_CERTDIR
                           value: ""
                     - name: kubectl
-                      image: alpine/kubectl:1.30
+                      image: alpine/kubectl:1.35.4
                       command: ["sleep"]
                       args: ["infinity"]
             '''
