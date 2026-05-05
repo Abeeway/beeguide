@@ -56,6 +56,22 @@ pipeline {
             }
         }
 
+        stage('Diagnose') {
+            steps {
+                container('docker') {
+                    sh '''
+                        echo "=== Network ports listening ==="
+                        netstat -tln 2>/dev/null || ss -tln 2>/dev/null || echo "no netstat/ss"
+                        echo "=== Trying to reach dind ==="
+                        nc -zv localhost 2375 2>&1 || echo "nc not available"
+                        wget -qO- http://localhost:2375/_ping 2>&1 || echo "wget failed"
+                        echo "=== DOCKER_HOST env ==="
+                        echo "DOCKER_HOST=$DOCKER_HOST"
+                    '''
+                }
+            }
+        }
+        
         stage('Build image') {
             steps {
                 container('docker') {
