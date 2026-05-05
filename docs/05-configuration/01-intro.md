@@ -42,5 +42,5 @@ More details on how to set configuration parameters can be found under the follo
     rel="noopener noreferrer"
   >Message format for setting config parameters via downlink</a>
 
-<!-- - [Configuration parameters](/docs/firmware-reference-guide/latest/configuration) -->
-<!-- - [Message format for setting config parameters via downlink](/docs/firmware-reference-guide/latest/application-downlink#parameter-class-configuration-set-request) -->
+{/* - [Configuration parameters](/docs/firmware-reference-guide/latest/configuration) */}
+{/* - [Message format for setting config parameters via downlink](/docs/firmware-reference-guide/latest/application-downlink#parameter-class-configuration-set-request) */}

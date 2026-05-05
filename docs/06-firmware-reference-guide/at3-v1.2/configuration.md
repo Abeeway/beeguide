@@ -205,7 +205,7 @@ configures a pattern for a system event.
 
 The parameter is defined as:
 
-<html>
+<div>
 <table width="750">
 <tbody>
 <tr>
@@ -288,7 +288,7 @@ The parameter is defined as:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 
 
@@ -336,7 +336,7 @@ configures a melody for a system event.
 
 The parameter is defined as:
 
-<html>
+<div>
 <table width="750">
 <tbody>
 <tr>
@@ -419,7 +419,7 @@ The parameter is defined as:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 *Where*
 

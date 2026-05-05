@@ -38,7 +38,7 @@ Request messages are sent to read information from the device or to update its c
 
 ## Further Reading
 
-<!-- - [Downlink payload format description](/docs/firmware-reference-guide/latest/application-downlink) -->
+{/* - [Downlink payload format description](/docs/firmware-reference-guide/latest/application-downlink) */}
 - <a
     href="/docs/firmware-reference-guide/latest/application-downlink"
     target="_blank"

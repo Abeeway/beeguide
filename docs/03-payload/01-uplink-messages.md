@@ -61,7 +61,7 @@ If you’d like to use our JavaScript driver in a Python environment, please ref
 
 ## Further Reading
 
-<!-- - [Uplink payload format description](/docs/firmware-reference-guide/latest/application-uplink) -->
+{/* - [Uplink payload format description](/docs/firmware-reference-guide/latest/application-uplink) */}
 - <a
     href="/docs/firmware-reference-guide/latest/application-uplink"
     target="_blank"

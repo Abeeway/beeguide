@@ -190,7 +190,7 @@ The byte array is split into **10 slices** of **3 bytes** each; each slice confi
 
 The parameter is defined as:
 
-<html>
+<div>
 <table width="750">
 <tbody>
 <tr>
@@ -213,7 +213,7 @@ The parameter is defined as:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 *Where*  
 - **ext/cls:** Pattern extension and system event class.  
@@ -245,7 +245,7 @@ The byte array is split into **10 slices** of **3 bytes** each; each slice confi
 
 The parameter is defined as:
 
-<html>
+<div>
 <table width="750">
 <tbody>
 <tr>
@@ -268,7 +268,7 @@ The parameter is defined as:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 *Where*  
 - **ext/cls:** Melody extension and system event class.  

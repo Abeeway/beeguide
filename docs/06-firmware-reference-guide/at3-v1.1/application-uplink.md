@@ -1884,7 +1884,7 @@ notification](#response-of-a-system-status-request).
 The multi-frame can be used to answer the GPS almanac entries. The data
 part is as follows:
 
-<html>
+<div>
 <table width="537">
 <tbody>
 <tr>
@@ -1934,14 +1934,14 @@ part is as follows:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 **Notes**
 
 -   **Date**: Number of days since April 7^th^ 2019.
 -   **Data-entry** is formatted as follow:
 
-<html>
+<div>
 <table width="444">
 <tbody>
 <tr>
@@ -1967,7 +1967,7 @@ part is as follows:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 -   **SV-ID**: Satellite identifier in the GPS constellation. Start at
     0.
@@ -1981,7 +1981,7 @@ Not yet implemented.
 The multi-frame format can be used to provide the GPS almanac entries.
 The data part is as follows:
 
-<html>
+<div>
 <table width="537">
 <tbody>
 <tr>
@@ -2031,13 +2031,13 @@ The data part is as follows:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 **Notes**
 -   **Date**: Number of days since April 7^th^ 2019.
 -   **Data-entry** is formatted as follow:
 
-<html>
+<div>
 <table width="444">
 <tbody>
 <tr>
@@ -2063,7 +2063,7 @@ The data part is as follows:
 </tr>
 </tbody>
 </table>
-</html>
+</div>
 
 -   **SV-ID**: Satellite identifier in the GPS constellation. Start at
     0.

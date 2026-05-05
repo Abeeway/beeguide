@@ -13,7 +13,7 @@ Please refer to the
 [Binary file download section](./firmware-update#binary-file-download).
 
 - **Remote command for triggering FUOTA**. A new downlink command
-[`FUOTA request`](./12-application-downlink.md#fuota-request) has been
+[`FUOTA request`](./12-application-downlink.md#fuota-request-command) has been
 added to remotely trigger a FUOTA and corresponding responses
 [`FUOTA response`](./10-application-uplink.md#fuota-response), and
 notifications have been added.

@@ -61,3 +61,4 @@ After the workflow completes successfully, the site will be published to:
 
 - [https://abeeway.github.io/beeguide/](https://abeeway.github.io/beeguide/)
 
+The page will be automatically updated upon pushing a new commit.

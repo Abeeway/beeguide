@@ -1764,19 +1764,19 @@ These messages carry the responses to [network requests](./12-application-downli
 
 - b7-5: Spare bits
 - b4-0: **Response type**
-  - 0 – Response to a [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request).
-  - 1 – Response to a [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request).
-  - 2 – Response to a [`Generic configuration get request`](./12-application-downlink.md#generic-configuration-get-request).
-  - 3 – Response to a [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request).
-  - 4 – Response to a [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request).
-  - 5 – Response to a [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request).
-  - 6 – Response to a [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request).
-  - 7 – Response to a [`Get information request`](./12-application-downlink.md#get-information-request).
-  - 8 – Response to a [`FUOTA request`](./12-application-downlink.md#fuota-request).
+  - 0 – Response to a [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request-command).
+  - 1 – Response to a [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request-command).
+  - 2 – Response to a [`Generic configuration get request`](./12-application-downlink.md#generic-configuration-get-request-command).
+  - 3 – Response to a [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request-command).
+  - 4 – Response to a [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request-command).
+  - 5 – Response to a [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request-command).
+  - 6 – Response to a [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request-command).
+  - 7 – Response to a [`Get information request`](./12-application-downlink.md#get-information-request-command).
+  - 8 – Response to a [`FUOTA request`](./12-application-downlink.md#fuota-request-command).
 
 ### `Generic configuration set response`.
 
-This is the response to the [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request).
+This is the response to the [`Generic configuration set request`](./12-application-downlink.md#generic-configuration-set-request-command).
 
 The data part can acknowledge the modification of up to 16 parameters.
 
@@ -1819,7 +1819,7 @@ The data part can acknowledge the modification of up to 16 parameters.
 
 ### `Parameter class configuration set response`
 
-This is the response to the [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request).
+This is the response to the [`Parameter class configuration set request`](./12-application-downlink.md#parameter-class-configuration-set-request-command).
 
 The data part acknowledge the modification of up to 24 parameters.
 
@@ -1856,7 +1856,7 @@ The data part acknowledge the modification of up to 24 parameters.
 
 ### `Generic configuration get response`
 
-This is the response to the [`Generic configuration get`](./12-application-downlink.md#generic-configuration-get-request).
+This is the response to the [`Generic configuration get`](./12-application-downlink.md#generic-configuration-get-request-command).
 The data part consists of a list of parameters belonging to any parameter classes.
 The multi-frame format can be used. Note that for some parameters, the size is variable. So it is advised to avoid requesting too many parameters at a time.
 
@@ -1903,7 +1903,7 @@ Parameters description:
 
 ### `Parameter class configuration get response`
 
-This is the response to the [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request).
+This is the response to the [`Parameter class configuration get request`](./12-application-downlink.md#parameter-class-configuration-get-request-command).
 The data part consists of a list of parameters belonging to any classes.
 The multi-frame format can be used. Note that for some parameters, the size is variable. The total response size is limited by the network MTU, therefore avoid requesting too many parameters at a time.
 
@@ -1960,7 +1960,7 @@ The data part starts with the parameter class identifier, followed by a list of 
 
 ### `BLE connectivity status response`
 
-This is the response to the [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request)/
+This is the response to the [`BLE connectivity status request`](./12-application-downlink.md#ble-connectivity-status-request-command)/
 The data part consists of the BLE status.
 
 | Status |
@@ -1976,7 +1976,7 @@ The *status* can take one of the following values:
 
 ### `Configuration CRC response`
 
-This is the response to the [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request).
+This is the response to the [`Configuration CRC request`](./12-application-downlink.md#configuration-crc-request-command).
 The data part consists of a list of configuration CRC groups matching the request.
 
 **If No groups defined in the request (bitmap null)**
@@ -1995,7 +1995,7 @@ The **bitmap** has the same format as in the request, i.e. sum of 2<up>group_ide
 
 ### `Get sensor value response`
 
-This is the response to the [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request).
+This is the response to the [`Get sensor value request`](./12-application-downlink.md#get-sensor-value-request-command).
 The data part is the list of the sensor values requested.
 
 | Sensor ID 1	| Value for ID1 | Sensor ID 2	| Value for ID2 | ... |
@@ -2013,7 +2013,7 @@ The data part is the list of the sensor values requested.
 
 ### `Get information response`
 
-This is the response to the [`Get information request`](./12-application-downlink.md#get-information-request).
+This is the response to the [`Get information request`](./12-application-downlink.md#get-information-request-command).
 
 **Generic response**
 | Type   | Data     |
@@ -2038,7 +2038,7 @@ Abeeway support will request this diagnostics information in case you face unsta
 
 ### `FUOTA response`
 
-This is the response to the [`FUOTA request`](./12-application-downlink.md#fuota-request).
+This is the response to the [`FUOTA request`](./12-application-downlink.md#fuota-request-command).
 
 **Generic response**
 | Status |

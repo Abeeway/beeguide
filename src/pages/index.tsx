@@ -34,9 +34,9 @@ const appLinks = [
     icon: '/img/fuota-icon.svg',
   },
   {
-    title: 'AbwBattery',
+    title: 'AbwBatteryBETA',
     href: 'https://abeeway.github.io/abeeway-battery',
-    description: 'Battery lifetime estimation tool for Abeeway Trackers',
+    description: 'The BETA version of the Battery lifetime estimation tool for Abeeway AT3 Trackers',
     icon: '/img/abeeway-battery-icon.svg',
   },
   {
@@ -71,6 +71,12 @@ const legacyAppLinks = [
     href: 'https://abeeway.github.io/beequeen-at2',
     description: 'Configuration editor for AT2 Firmware',
     icon: '/img/beequeen-icon-small.png',
+  },
+  {
+    title: 'AbwBatteryAT2',
+    href: 'https://abeeway.github.io/abeeway-battery-at2',
+    description: 'Battery lifetime estimation tool for Abeeway Trackers',
+    icon: '/img/abeeway-battery-icon.svg',
   },
   {
     title: 'TiltMonitor',
