@@ -20,7 +20,7 @@ pipeline {
                   volumes:
                     - name: docker-config
                       secret:
-                        secretName: scaleway-registry-creds
+                        secretName: registry-secret
                         items:
                           - key: .dockerconfigjson
                             path: config.json
